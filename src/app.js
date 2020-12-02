@@ -56,17 +56,20 @@ geocode(req.query.address, (error, {latitude, longitude, location} = {}) => {
             error
         });
     };
-    weather(latitude, longitude, (error, {temperature, description, wind_speed} = {}) => {
+    weather(latitude, longitude, (error, {country, region, temperature, description, wind_speed, humidity} = {}) => {
         if(error){
             return res.send({
                 error
             });
         };
         res.send({
+            country,
+            region,
             location,
             temperature,
             description,
-            wind_speed
+            wind_speed,
+            humidity
         });
 
     });

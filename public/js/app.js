@@ -15,9 +15,12 @@ weatherForm.addEventListener('submit', (e) => {
             searchValue.value = '';
             }else{
             info.innerHTML =
+            'Country: ' + data.country + '</br>' +
+            'Region: ' + data.region + '</br>' +
             'Location: ' + data.location + '</br>' +
             'Temperature: ' + data.temperature + '</br>' +
             'Description: ' + data.description + '</br>' +
+            'Humidity: ' + data.humidity + '</br>' +
             'Wind speed: '  + data.wind_speed;  
             //console.log('Data: ', data);
             }

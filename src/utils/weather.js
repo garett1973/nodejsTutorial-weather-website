@@ -9,10 +9,14 @@ const weatherForLocation = (latitude, longitude, callback) => {
         }else if(body.error){
             callback(chalk.redBright('Unable to find location'), undefined);
         }else{
+            console.log(body);
             const weatherData = {
+                country: body.location.country,
+                region: body.location.region,
                 temperature: body.current.temperature,
                 description: body.current.weather_descriptions[0],
-                wind_speed: body.current.wind_speed};
+                wind_speed: body.current.wind_speed,
+                humidity: body.current.humidity};
             callback(error, weatherData);
             };
     });
