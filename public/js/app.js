@@ -6,7 +6,7 @@ const info = document.querySelector('.info');
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
     info.textContent = '';
-    const searchString = `http://localhost:3000/weather?address=${searchValue.value}`;
+    const searchString = `/weather?address=${searchValue.value}`;
     fetch(searchString).then((response) => {
         response.json().then((data) => {
             if(data.error){
